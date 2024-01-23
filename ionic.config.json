@@ -1,0 +1,7 @@
+{
+  "name": "examen-ph-mcr",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
