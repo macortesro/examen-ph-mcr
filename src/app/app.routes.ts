@@ -1,4 +1,7 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { CreacionPage } from './paginas/creacion/creacion.page';
+import { NgModule } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
 
 export const routes: Routes = [
   {
@@ -10,4 +13,15 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'creacion',
+    component: CreacionPage
+  },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
+

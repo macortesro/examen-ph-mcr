@@ -1,0 +1,21 @@
+
+<ion-list>
+  <ion-item *ngFor="let a of avisos; let i = index">
+    <ion-thumbnail slot="start">
+      <img [src]="a.imagen" alt="Thumb" style="max-width: 75px;" *ngIf="a.imagen">
+    </ion-thumbnail>
+    <ion-label>
+    <strong>{{ a.titulo }}</strong>
+    <!-- Se utiliza | date: 'yyyy-MM-dd' para formatear la fecha segun lo solicitado-->
+    <p>{{ a.fechaCreacion | date: 'yyyy-MM-dd' }}</p>
+    
+  </ion-label>
+  
+    <br>
+      <!-- MODAL PARA CONFIRMAR LA ELIMINACION DE LA PUBLICACION  -->
+    <ion-button (click)="confirmarEliminar(i)">
+      <ion-icon name="trash-outline" />
+    </ion-button>
+  </ion-item>
+</ion-list>
+

@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" />
+    </ion-buttons>
+    <ion-title>Publicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  
+  <ion-card> 
+    <h1 class="ion-text-center" > Crear una nueva Publicación</h1>
+    
+    <app-avisos-form (onCreate)="onCreateAviso($event)"/>
+    
+    </ion-card>
+    
+</ion-content>

@@ -1,0 +1,53 @@
+<ion-card>
+  <ion-list>
+    <ion-item ><!-- CAMPO PARA AGREGAR EL TITULO, REQUERIDO 5 CARACT MIN CON MENSAJE DE ERROR  -->
+      <ion-input 
+      [(ngModel)]="aviso.titulo" 
+      name="titulo"  
+      label="Titulo" 
+      placeholder="Minimo 5 caracteres" 
+      required="required"
+      minlength="5"
+      #avisoInput="ngModel">
+    </ion-input>
+      <div *ngIf="mensajeErrorTitulo" class="mensaje-error">{{ mensajeErrorTitulo }}</div>
+    </ion-item>
+
+  
+
+    <ion-item><!-- CAMPO PARA AGREGAR LA DESCRIPCION, REQUERIDO 20 CARACT MIN CON MENSAJE DE ERROR  -->
+      <ion-input [(ngModel)]="aviso.descripcion" 
+      name="descripcion"  
+      label="Descripcion" 
+      placeholder="Minimo 20 caracteres" 
+      required="required"
+      minlength="20"
+      #avisoInput="ngModel">
+    </ion-input>
+      <div *ngIf="mensajeErrorDescripcion" class="mensaje-error">{{ mensajeErrorDescripcion}}</div>
+    </ion-item>
+  </ion-list>
+
+
+  <!-- AQUI VA PARA AGREGAR LA IMAGEN  -->
+  <ion-item>
+    <ion-buttons slot="start">
+      <ion-button (click)="abrirModalCamara()">
+        <ion-icon name="camera-outline"></ion-icon>&nbsp;
+        <ion-label>Fotografía</ion-label>
+      </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item>
+      <img *ngIf="foto" [src]="foto.webPath" alt="Foto">
+    </ion-item>
+
+
+  <ion-button 
+  (click)="onClick()" 
+  type="ion-button"
+  [disabled]="!avisoInput.valid">
+    GUARDAR +
+  </ion-button>
+</ion-card>
